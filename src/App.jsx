@@ -4,6 +4,7 @@ import { ATTRIBUTE_LIST, CLASS_LIST, SKILL_LIST } from "./consts";
 import Attribute from "./components/Attribute/Attribute";
 import CharClass from "./components/CharClass/CharClass";
 import Skills from "./components/Skills/Skills";
+import CharacterManager from "./components/CharacterManager/CharacterManager";
 
 function App() {
   const initialAttributes = useMemo(
@@ -41,6 +42,16 @@ function App() {
         <h1>React Coding Exercise</h1>
       </header>
       <section className="App-section">
+        <section>
+          <CharacterManager
+            characterAttributes={attributesObject}
+            actionType="save"
+          />
+
+          {/* Load Character */}
+          <CharacterManager actionType="load" />
+        </section>
+
         <section className="data-section">
           <h2>Attributes</h2>
           <h3>Total Attributes Allocated: {totalAttributePoints}</h3>
