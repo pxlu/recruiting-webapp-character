@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 
-const useCharacterApi = (githubUsername, apiUrl, method = "GET") => {
+const useCharacterApi = (apiUrl, method = "GET") => {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -16,7 +16,7 @@ const useCharacterApi = (githubUsername, apiUrl, method = "GET") => {
           headers: {
             "Content-Type": "application/json",
           },
-          ...(data && { body: JSON.stringify(data) }), // Add body only if there's data
+          ...(data && { body: JSON.stringify(data) }),
         });
 
         if (!result.ok) {
