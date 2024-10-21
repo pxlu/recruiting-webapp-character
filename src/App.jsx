@@ -3,6 +3,7 @@ import "./App.css";
 import { ATTRIBUTE_LIST, CLASS_LIST, SKILL_LIST } from "./consts";
 import Attribute from "./components/Attribute/Attribute";
 import CharClass from "./components/CharClass/CharClass";
+import Skills from "./components/Skills/Skills";
 
 function App() {
   const initialAttributes = useMemo(
@@ -63,6 +64,10 @@ function App() {
               currentAttributes={currentAttributes}
             />
           ))}
+        </section>
+
+        <section className="skills-section">
+          <Skills currentAttributes={attributesObject} />
         </section>
       </section>
     </div>
